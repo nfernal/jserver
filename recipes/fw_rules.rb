@@ -12,3 +12,7 @@ end
 iptables_rule 'httpd_ipt' do
   action :enable
 end
+
+iptables_rule 'mysql_ipt' do
+  action :enable
+end

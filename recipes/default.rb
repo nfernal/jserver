@@ -13,6 +13,7 @@ include_recipe 'maven::default'
 include_recipe 'maven::settings'
 include_recipe 'clamav::default'
 include_recipe 'jenkins::master'
+include_recipe 'jserver::mysql'
 # include_recipe 'deploy-play::default'
 
 package 'httpd' do
@@ -22,11 +23,4 @@ end
 service 'httpd' do
   supports :status => true, :restart => true, :reload => true
   action [:start, :enable]
-end
-
-mysql_service 'foo' do
-  port '3306'
-  version '5.6'
-  initial_root_password 'password'  #Change this!!!!
-  action [:create, :start]
 end
