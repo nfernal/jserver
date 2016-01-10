@@ -17,10 +17,11 @@ platforms:
     customize:
       memory: 2048
     network:
-      # - ['private_network', {ip: '192.168.33.33'}]  ## On Windows, use "forwarded_port"
+      # - ['private_network', {ip: '192.168.13.13'}]  ## On Windows, use "forwarded_port"
       - ["forwarded_port", {guest: 8080, host: 9090}]
       - ["forwarded_port", {guest: 80, host: 8000}]
       - ["forwarded_port", {guest: 3306, host: 33060}]
+      - ["forwarded_port", {guest: 8081, host: 9091}]
 
 suites:
   - name: default
